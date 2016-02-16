@@ -7,7 +7,6 @@
 //
 
 #include <iostream>
-#include <vector>
 
 class Perceptron {
     float w[3];
@@ -16,32 +15,40 @@ class Perceptron {
     
 public:
     Perceptron() {
+//        Initialize perceptron with weight and learning factor
         for (int i = 0; i < 3; i++) {
             w[i] = static_cast<float>(rand())/static_cast<float>(RAND_MAX);
         }
         l = static_cast<float>(rand())/static_cast<float>(RAND_MAX);
     }
     
-    void classify(float classify) {
-        d = classify;
+    void classify(float classification) {
+//        Classification of data
+        d = classification;
     }
     
     void learn(float x[2]) {
+//        Learning by using data set adjusting weights based on current output
         std::cout << "The current weights are w1: " << w[1] << " w2: " << w[2] << std::endl;
         std::cout << "The current learning rate is " << y << std::endl;
         std::cout << "The current threshold is " << t << std::endl;
         int count = 0;
-        y = x[0]*w[1] + x[1]*w[2];
+//        f(x) = ∑x•w + b
+        y = x[0]*w[1] + x[1]*w[2] + w[0];
         std::cout << "The current output is " << y << std::endl;
         t = x[0]*w[1] + x[1]*w[2] + w[0];
         while (true) {
+//            Exit loop if result is at least within 90% of classification
             if (y == d || y >= .9*d) {
                 break;
             }
             for (int i = 0; i < 2; i++) {
+//                w = w + α(d-y)x
                 w[i+1] = w[i] + l*(d-y)*x[i];
+//                Modify learning rate if result not acquired within 10 iterations
                 if (count == 10) {
                     l = static_cast<float>(rand())/static_cast<float>(RAND_MAX);
+                    std::cout << "The new learning rate is " << y << std::endl;
                     count = 0;
                 }
                 else {
@@ -54,6 +61,7 @@ public:
                 break;
             }
         }
+//        Final classification and rounding out result
         if (y > 0) {
             y = 1;
         }
@@ -63,6 +71,7 @@ public:
     }
     
     float getOutput() {
+//        Returns output
         return y;
     }
 };
