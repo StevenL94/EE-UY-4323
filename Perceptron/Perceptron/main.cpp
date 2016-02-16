@@ -23,11 +23,11 @@ public:
     }
     
     void classify(float classification) {
-//        Classification of data
+//        Defines classification of data
         d = classification;
     }
     
-    void learn(float x[2]) {
+    void learn(float x[]) {
 //        Learning by using data set adjusting weights based on current output
         std::cout << "The current weights are w1: " << w[1] << " w2: " << w[2] << std::endl;
         std::cout << "The current learning rate is " << y << std::endl;
@@ -38,7 +38,7 @@ public:
         std::cout << "The current output is " << y << std::endl;
         t = x[0]*w[1] + x[1]*w[2] + w[0];
         while (true) {
-//            Exit loop if result is at least within 90% of classification
+//            Exit loop if result is at least within 90% of classification factor
             if (y == d || y >= .9*d) {
                 break;
             }
