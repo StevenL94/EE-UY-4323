@@ -30,7 +30,7 @@ public:
     void learn(float x[]) {
 //        Learning by using data set adjusting weights based on current output
         std::cout << "The current weights are w1: " << w[1] << " w2: " << w[2] << std::endl;
-        std::cout << "The current learning rate is " << y << std::endl;
+        std::cout << "The current learning rate is " << l << std::endl;
         std::cout << "The current threshold is " << t << std::endl;
         int count = 0;
 //        f(x) = ∑x•w + b
