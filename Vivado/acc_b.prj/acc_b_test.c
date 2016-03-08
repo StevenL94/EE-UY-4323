@@ -10,7 +10,7 @@
 #include "acc_b.h"
 
 int main(int argc, const char * argv[]) {
-    int data_out;
+    float data_out;
     bool data_en;
     data_out = acc_b (1, data_en);
     data_out = acc_b (2, data_en);

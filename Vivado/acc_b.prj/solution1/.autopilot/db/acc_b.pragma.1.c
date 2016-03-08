@@ -237,11 +237,11 @@
 /* Don't define bool, true, and false in C++, except as a GNU extension. */
 #13 "acc_b.prj/acc_b.h" 2
 
-int acc_b (int b_in, _Bool b_en);
+float acc_b (float b_in, _Bool b_en);
 #2 "acc_b.prj/acc_b.c" 2
 
-int acc_b(int b_in, _Bool b_en ) {
- static int cnt = 0;
+float acc_b(float b_in, _Bool b_en ) {
+ static float cnt = 0;
  if(!b_en) {
   cnt += b_in;
  }

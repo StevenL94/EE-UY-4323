@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"acc_b" : [[], {"return": [[], {"scalar": "int"}] }, [{"ExternC" : 0}], [ {"b_in": [[], {"scalar": "int"}] }, {"b_en": [[], {"scalar": "_Bool"}] }],[],""]
+"acc_b" : [[], {"return": [[], {"scalar": "float"}] }, [{"ExternC" : 0}], [ {"b_in": [[], {"scalar": "float"}] }, {"b_en": [[], {"scalar": "_Bool"}] }],[],""]
 }}
 set moduleName acc_b
 set isCombinational 0
@@ -7,17 +7,17 @@ set isDatapathOnly 0
 set isPipelined 0
 set pipeline_type none
 set FunctionProtocol ap_ctrl_hs
-set isOneStateSeq 1
+set isOneStateSeq 0
 set C_modelName {acc_b}
-set C_modelType { int 32 }
+set C_modelType { float 32 }
 set C_modelArgList { 
-	{ b_in int 32 regular  }
+	{ b_in float 32 regular  }
 	{ b_en uint 1 regular  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "b_in", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "b_in","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} , 
+	{ "Name" : "b_in", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "b_in","cData": "float","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} , 
  	{ "Name" : "b_en", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "b_en","cData": "_Bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} , 
- 	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 32,"bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "return","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 1,"step" : 0}]}]}]} ]}
+ 	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 32,"bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "return","cData": "float","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 1,"step" : 0}]}]}]} ]}
 # RTL Port declarations: 
 set portNum 9
 set portList { 

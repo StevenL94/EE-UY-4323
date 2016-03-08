@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="acc_b,hls_ip_2015_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7a200tfbg676-2,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.411000,HLS_SYN_LAT=0,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=33,HLS_SYN_LUT=64}" *)
+(* CORE_GENERATION_INFO="acc_b,hls_ip_2015_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7a200tfbg676-2,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.825000,HLS_SYN_LAT=3,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=2,HLS_SYN_FF=274,HLS_SYN_LUT=268}" *)
 
 module acc_b (
         ap_clk,
@@ -23,10 +23,15 @@ module acc_b (
 
 parameter    ap_const_logic_1 = 1'b1;
 parameter    ap_const_logic_0 = 1'b0;
-parameter    ap_ST_st1_fsm_0 = 1'b1;
+parameter    ap_ST_st1_fsm_0 = 5'b1;
+parameter    ap_ST_st2_fsm_1 = 5'b10;
+parameter    ap_ST_st3_fsm_2 = 5'b100;
+parameter    ap_ST_st4_fsm_3 = 5'b1000;
+parameter    ap_ST_st5_fsm_4 = 5'b10000;
 parameter    ap_const_lv32_0 = 32'b00000000000000000000000000000000;
 parameter    ap_const_lv1_1 = 1'b1;
 parameter    ap_const_lv1_0 = 1'b0;
+parameter    ap_const_lv32_4 = 32'b100;
 parameter    ap_true = 1'b1;
 
 input   ap_clk;
@@ -42,15 +47,34 @@ output  [31:0] ap_return;
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
-(* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm = 1'b1;
+(* fsm_encoding = "none" *) reg   [4:0] ap_CS_fsm = 5'b1;
 reg    ap_sig_cseq_ST_st1_fsm_0;
-reg    ap_sig_bdd_17;
+reg    ap_sig_bdd_21;
 reg   [31:0] cnt = 32'b00000000000000000000000000000000;
-reg   [31:0] cnt_loc_phi_fu_33_p4;
 wire   [0:0] b_en_read_read_fu_18_p2;
-wire   [31:0] cnt_assign_fu_44_p2;
-reg   [0:0] ap_NS_fsm;
+reg   [31:0] cnt_loc_phi_fu_33_p4;
+reg   [31:0] cnt_loc_reg_30;
+wire   [31:0] grp_fu_39_p2;
+reg    ap_sig_cseq_ST_st5_fsm_4;
+reg    ap_sig_bdd_53;
+wire    grp_fu_39_ce;
+reg   [4:0] ap_NS_fsm;
 
+
+acc_b_fadd_32ns_32ns_32_5_full_dsp #(
+    .ID( 1 ),
+    .NUM_STAGE( 5 ),
+    .din0_WIDTH( 32 ),
+    .din1_WIDTH( 32 ),
+    .dout_WIDTH( 32 ))
+acc_b_fadd_32ns_32ns_32_5_full_dsp_U0(
+    .clk( ap_clk ),
+    .reset( ap_rst ),
+    .din0( cnt ),
+    .din1( b_in ),
+    .ce( grp_fu_39_ce ),
+    .dout( grp_fu_39_p2 )
+);
 
 
 
@@ -63,13 +87,21 @@ always @ (posedge ap_clk) begin : ap_ret_ap_CS_fsm
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_const_logic_1 == ap_sig_cseq_ST_st1_fsm_0) & ~(ap_start == ap_const_logic_0) & (b_en_read_read_fu_18_p2 == ap_const_lv1_0))) begin
-        cnt <= cnt_assign_fu_44_p2;
+    if (((b_en_read_read_fu_18_p2 == ap_const_lv1_0) & (ap_const_logic_1 == ap_sig_cseq_ST_st5_fsm_4))) begin
+        cnt_loc_reg_30 <= grp_fu_39_p2;
+    end else if (((ap_const_logic_1 == ap_sig_cseq_ST_st1_fsm_0) & ~(ap_start == ap_const_logic_0) & ~(b_en_read_read_fu_18_p2 == ap_const_lv1_0))) begin
+        cnt_loc_reg_30 <= cnt;
     end
 end
 
-always @ (ap_start or ap_sig_cseq_ST_st1_fsm_0) begin
-    if (((ap_const_logic_1 == ap_sig_cseq_ST_st1_fsm_0) & ~(ap_start == ap_const_logic_0))) begin
+always @ (posedge ap_clk) begin
+    if (((b_en_read_read_fu_18_p2 == ap_const_lv1_0) & (ap_const_logic_1 == ap_sig_cseq_ST_st5_fsm_4))) begin
+        cnt <= grp_fu_39_p2;
+    end
+end
+
+always @ (ap_sig_cseq_ST_st5_fsm_4) begin
+    if ((ap_const_logic_1 == ap_sig_cseq_ST_st5_fsm_4)) begin
         ap_done = ap_const_logic_1;
     end else begin
         ap_done = ap_const_logic_0;
@@ -84,38 +116,62 @@ always @ (ap_start or ap_sig_cseq_ST_st1_fsm_0) begin
     end
 end
 
-always @ (ap_start or ap_sig_cseq_ST_st1_fsm_0) begin
-    if (((ap_const_logic_1 == ap_sig_cseq_ST_st1_fsm_0) & ~(ap_start == ap_const_logic_0))) begin
+always @ (ap_sig_cseq_ST_st5_fsm_4) begin
+    if ((ap_const_logic_1 == ap_sig_cseq_ST_st5_fsm_4)) begin
         ap_ready = ap_const_logic_1;
     end else begin
         ap_ready = ap_const_logic_0;
     end
 end
 
-always @ (ap_sig_bdd_17) begin
-    if (ap_sig_bdd_17) begin
+always @ (ap_sig_bdd_21) begin
+    if (ap_sig_bdd_21) begin
         ap_sig_cseq_ST_st1_fsm_0 = ap_const_logic_1;
     end else begin
         ap_sig_cseq_ST_st1_fsm_0 = ap_const_logic_0;
     end
 end
 
-always @ (ap_sig_cseq_ST_st1_fsm_0 or cnt or b_en_read_read_fu_18_p2 or cnt_assign_fu_44_p2) begin
-    if ((ap_const_logic_1 == ap_sig_cseq_ST_st1_fsm_0)) begin
-        if ((b_en_read_read_fu_18_p2 == ap_const_lv1_0)) begin
-            cnt_loc_phi_fu_33_p4 = cnt_assign_fu_44_p2;
-        end else if (~(b_en_read_read_fu_18_p2 == ap_const_lv1_0)) begin
-            cnt_loc_phi_fu_33_p4 = cnt;
-        end else begin
-            cnt_loc_phi_fu_33_p4 = 'bx;
-        end
+always @ (ap_sig_bdd_53) begin
+    if (ap_sig_bdd_53) begin
+        ap_sig_cseq_ST_st5_fsm_4 = ap_const_logic_1;
     end else begin
-        cnt_loc_phi_fu_33_p4 = 'bx;
+        ap_sig_cseq_ST_st5_fsm_4 = ap_const_logic_0;
     end
 end
-always @ (ap_start or ap_CS_fsm) begin
+
+always @ (b_en_read_read_fu_18_p2 or cnt_loc_reg_30 or grp_fu_39_p2 or ap_sig_cseq_ST_st5_fsm_4) begin
+    if (((b_en_read_read_fu_18_p2 == ap_const_lv1_0) & (ap_const_logic_1 == ap_sig_cseq_ST_st5_fsm_4))) begin
+        cnt_loc_phi_fu_33_p4 = grp_fu_39_p2;
+    end else begin
+        cnt_loc_phi_fu_33_p4 = cnt_loc_reg_30;
+    end
+end
+always @ (ap_start or ap_CS_fsm or b_en_read_read_fu_18_p2) begin
     case (ap_CS_fsm)
         ap_ST_st1_fsm_0 : 
+        begin
+            if ((~(ap_start == ap_const_logic_0) & ~(b_en_read_read_fu_18_p2 == ap_const_lv1_0))) begin
+                ap_NS_fsm = ap_ST_st5_fsm_4;
+            end else if ((~(ap_start == ap_const_logic_0) & (b_en_read_read_fu_18_p2 == ap_const_lv1_0))) begin
+                ap_NS_fsm = ap_ST_st2_fsm_1;
+            end else begin
+                ap_NS_fsm = ap_ST_st1_fsm_0;
+            end
+        end
+        ap_ST_st2_fsm_1 : 
+        begin
+            ap_NS_fsm = ap_ST_st3_fsm_2;
+        end
+        ap_ST_st3_fsm_2 : 
+        begin
+            ap_NS_fsm = ap_ST_st4_fsm_3;
+        end
+        ap_ST_st4_fsm_3 : 
+        begin
+            ap_NS_fsm = ap_ST_st5_fsm_4;
+        end
+        ap_ST_st5_fsm_4 : 
         begin
             ap_NS_fsm = ap_ST_st1_fsm_0;
         end
@@ -131,12 +187,17 @@ assign ap_return = cnt_loc_phi_fu_33_p4;
 
 
 always @ (ap_CS_fsm) begin
-    ap_sig_bdd_17 = (ap_CS_fsm[ap_const_lv32_0] == ap_const_lv1_1);
+    ap_sig_bdd_21 = (ap_CS_fsm[ap_const_lv32_0] == ap_const_lv1_1);
+end
+
+
+always @ (ap_CS_fsm) begin
+    ap_sig_bdd_53 = (ap_const_lv1_1 == ap_CS_fsm[ap_const_lv32_4]);
 end
 
 assign b_en_read_read_fu_18_p2 = b_en;
 
-assign cnt_assign_fu_44_p2 = (cnt + b_in);
+assign grp_fu_39_ce = ap_const_logic_1;
 
 
 endmodule //acc_b

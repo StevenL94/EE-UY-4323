@@ -250,7 +250,7 @@
 					<item>30</item>
 					<item>31</item>
 				</oprand_edges>
-				<opcode>add</opcode>
+				<opcode>fadd</opcode>
 			</item>
 			<item class_id_reference="9" object_id="_8">
 				<Value>
@@ -652,7 +652,7 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>0</mMinLatency>
+			<mMinLatency>4</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
@@ -695,34 +695,34 @@
 			<first>13</first>
 			<second>
 				<first>0</first>
-				<second>0</second>
+				<second>4</second>
 			</second>
 		</item>
 		<item>
 			<first>14</first>
 			<second>
-				<first>0</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>15</first>
 			<second>
-				<first>0</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>17</first>
 			<second>
-				<first>0</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>18</first>
 			<second>
-				<first>0</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -741,14 +741,14 @@
 			<first>16</first>
 			<second>
 				<first>0</first>
-				<second>0</second>
+				<second>4</second>
 			</second>
 		</item>
 		<item>
 			<first>19</first>
 			<second>
-				<first>0</first>
-				<second>0</second>
+				<first>4</first>
+				<second>4</second>
 			</second>
 		</item>
 	</bblk_ent_exit>

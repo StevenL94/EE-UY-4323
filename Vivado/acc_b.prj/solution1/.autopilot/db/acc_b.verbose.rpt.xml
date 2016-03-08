@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'acc_b'" level="0">
-<item name = "Date">Mon Mar 07 23:12:34 2016
+<item name = "Date">Tue Mar 08 10:59:52 2016
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">acc_b.prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 3.41, 1.25</column>
+<column name="ap_clk">10.00, 7.83, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">0, 0, 1, 1, none</column>
+<column name="">1, 4, 2, 5, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -47,20 +47,21 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 32</column>
+<column name="Expression">-, -, -, -</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">-, -, -, -</column>
+<column name="Instance">-, 2, 205, 203</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 32</column>
-<column name="Register">-, -, 33, -</column>
+<column name="Multiplexer">-, -, -, 65</column>
+<column name="Register">-, -, 69, -</column>
 <specialColumn name="Available">730, 740, 269200, 129000</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, ~0, ~0</specialColumn>
+<specialColumn name="Utilization (%)">0, ~0, ~0, ~0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="acc_b_fadd_32ns_32ns_32_5_full_dsp_U0">acc_b_fadd_32ns_32ns_32_5_full_dsp, 0, 2, 205, 203</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -77,18 +78,20 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="cnt_assign_fu_44_p2">+, 0, 0, 32, 32, 32</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="cnt_loc_phi_fu_33_p4">32, 3, 32, 96</column>
+<column name="ap_NS_fsm">1, 6, 1, 6</column>
+<column name="cnt_loc_phi_fu_33_p4">32, 2, 32, 64</column>
+<column name="cnt_loc_reg_30">32, 2, 32, 64</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_CS_fsm">5, 0, 5, 0</column>
 <column name="cnt">32, 0, 32, 0</column>
+<column name="cnt_loc_reg_30">32, 0, 32, 0</column>
 </table>
 </item>
 </section>

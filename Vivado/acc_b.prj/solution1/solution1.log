@@ -7,20 +7,41 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
 @I [HLS-10] Setting target device to 'xc7a200tfbg676-2'
-@I [SIM-47] Using XSIM for RTL simulation.
-@I [SIM-14] Instrumenting C test bench ...
-@I [SIM-302] Starting C TB testing ... 
-@E [SIM-359] Aborting co-simulation: C TB simulation failed, nonzero return value '1'.
-@E [SIM-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
-@E [SIM-4] *** C/RTL co-simulation finished: FAIL ***
-command 'ap_source' returned error code
-    while executing
-"source C:/Users/stevenlee/Documents/acc_b.prj/solution1/cosim.tcl"
-    invoked from within
-"hls::main C:/Users/stevenlee/Documents/acc_b.prj/solution1/cosim.tcl"
-    ("uplevel" body line 1)
-    invoked from within
-"uplevel 1 hls::main {*}$args"
-    (procedure "hls_proc" line 5)
-    invoked from within
-"hls_proc $argv"
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Analyzing design file 'acc_b.prj/acc_b.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Starting code transformations ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-111] Elapsed time: 7.647 seconds; current memory usage: 70.4 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'acc_b' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'acc_b' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.047 seconds; current memory usage: 70.8 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'acc_b' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.031 seconds; current memory usage: 70.8 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'acc_b' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'acc_b/b_in' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'acc_b/b_en' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on function 'acc_b' to 'ap_ctrl_hs'.
+@W [RTGEN-101] Register 'cnt' is power-on initialization.
+@I [RTGEN-100] Generating core module 'acc_b_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'acc_b'.
+@I [HLS-111] Elapsed time: 0.094 seconds; current memory usage: 70.8 MB.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'acc_b'.
+@I [WVHDL-304] Generating RTL VHDL for 'acc_b'.
+@I [WVLOG-307] Generating RTL Verilog for 'acc_b'.
+@I [HLS-112] Total elapsed time: 8.349 seconds; peak memory usage: 70.8 MB.

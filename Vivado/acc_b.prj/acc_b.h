@@ -11,6 +11,6 @@
 
 #include <stdbool.h>
 
-int acc_b (int b_in, bool b_en);
+float acc_b (float b_in, bool b_en);
 
 #endif /* acc_b_h */

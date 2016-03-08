@@ -2,9 +2,6 @@
     <downStreamTool>
         <DownStreamTool name=""/>
     </downStreamTool>
-    <clockList>
-        <clock name="default" period="10"/>
-    </clockList>
     <config>
         <schedule model="acc_b"/>
     </config>
@@ -67,5 +64,8 @@
         <library name="DefaultPlatform" value="xilinx/artix7/artix7"/>
         <library name="DefaultPlatform" value="xilinx/artix7/artix7_fpv6"/>
     </libraryList>
+    <clockList>
+        <clock default="false" name="default" period="10"/>
+    </clockList>
 </solution>
 

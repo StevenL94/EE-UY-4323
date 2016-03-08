@@ -239,7 +239,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>cnt_assign_fu_44_p2</rtlName>
+              <rtlName>acc_b_fadd_32ns_32ns_32_5_full_dsp_U0</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -250,7 +250,7 @@
             <item>30</item>
             <item>31</item>
           </oprand_edges>
-          <opcode>add</opcode>
+          <opcode>fadd</opcode>
         </item>
         <item class_id_reference="9" object_id="_8">
           <Value>
@@ -652,7 +652,7 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>0</mMinLatency>
+        <mMinLatency>4</mMinLatency>
         <mMaxLatency>-1</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
@@ -660,12 +660,12 @@
     </cdfg_regions>
     <fsm class_id="23" tracking_level="1" version="0" object_id="_36">
       <states class_id="24" tracking_level="0" version="0">
-        <count>1</count>
+        <count>5</count>
         <item_version>0</item_version>
         <item class_id="25" tracking_level="1" version="0" object_id="_37">
           <id>1</id>
           <operations class_id="26" tracking_level="0" version="0">
-            <count>13</count>
+            <count>9</count>
             <item_version>0</item_version>
             <item class_id="27" tracking_level="1" version="0" object_id="_38">
               <id>4</id>
@@ -709,25 +709,73 @@
             </item>
             <item class_id_reference="27" object_id="_46">
               <id>13</id>
-              <stage>1</stage>
-              <latency>1</latency>
+              <stage>5</stage>
+              <latency>5</latency>
             </item>
-            <item class_id_reference="27" object_id="_47">
+          </operations>
+        </item>
+        <item class_id_reference="25" object_id="_47">
+          <id>2</id>
+          <operations>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item class_id_reference="27" object_id="_48">
+              <id>13</id>
+              <stage>4</stage>
+              <latency>5</latency>
+            </item>
+          </operations>
+        </item>
+        <item class_id_reference="25" object_id="_49">
+          <id>3</id>
+          <operations>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item class_id_reference="27" object_id="_50">
+              <id>13</id>
+              <stage>3</stage>
+              <latency>5</latency>
+            </item>
+          </operations>
+        </item>
+        <item class_id_reference="25" object_id="_51">
+          <id>4</id>
+          <operations>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item class_id_reference="27" object_id="_52">
+              <id>13</id>
+              <stage>2</stage>
+              <latency>5</latency>
+            </item>
+          </operations>
+        </item>
+        <item class_id_reference="25" object_id="_53">
+          <id>5</id>
+          <operations>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item class_id_reference="27" object_id="_54">
+              <id>13</id>
+              <stage>1</stage>
+              <latency>5</latency>
+            </item>
+            <item class_id_reference="27" object_id="_55">
               <id>14</id>
               <stage>1</stage>
               <latency>1</latency>
             </item>
-            <item class_id_reference="27" object_id="_48">
+            <item class_id_reference="27" object_id="_56">
               <id>15</id>
               <stage>1</stage>
               <latency>1</latency>
             </item>
-            <item class_id_reference="27" object_id="_49">
+            <item class_id_reference="27" object_id="_57">
               <id>17</id>
               <stage>1</stage>
               <latency>1</latency>
             </item>
-            <item class_id_reference="27" object_id="_50">
+            <item class_id_reference="27" object_id="_58">
               <id>18</id>
               <stage>1</stage>
               <latency>1</latency>
@@ -736,41 +784,126 @@
         </item>
       </states>
       <transitions class_id="28" tracking_level="0" version="0">
-        <count>0</count>
+        <count>5</count>
         <item_version>0</item_version>
+        <item class_id="29" tracking_level="1" version="0" object_id="_59">
+          <inState>1</inState>
+          <outState>2</outState>
+          <condition class_id="30" tracking_level="0" version="0">
+            <id>11</id>
+            <sop class_id="31" tracking_level="0" version="0">
+              <count>1</count>
+              <item_version>0</item_version>
+              <item class_id="32" tracking_level="0" version="0">
+                <count>1</count>
+                <item_version>0</item_version>
+                <item class_id="33" tracking_level="0" version="0">
+                  <first class_id="34" tracking_level="0" version="0">
+                    <first>8</first>
+                    <second>0</second>
+                  </first>
+                  <second>1</second>
+                </item>
+              </item>
+            </sop>
+          </condition>
+        </item>
+        <item class_id_reference="29" object_id="_60">
+          <inState>1</inState>
+          <outState>5</outState>
+          <condition>
+            <id>10</id>
+            <sop>
+              <count>1</count>
+              <item_version>0</item_version>
+              <item>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>
+                    <first>8</first>
+                    <second>0</second>
+                  </first>
+                  <second>0</second>
+                </item>
+              </item>
+            </sop>
+          </condition>
+        </item>
+        <item class_id_reference="29" object_id="_61">
+          <inState>2</inState>
+          <outState>3</outState>
+          <condition>
+            <id>13</id>
+            <sop>
+              <count>1</count>
+              <item_version>0</item_version>
+              <item>
+                <count>0</count>
+                <item_version>0</item_version>
+              </item>
+            </sop>
+          </condition>
+        </item>
+        <item class_id_reference="29" object_id="_62">
+          <inState>3</inState>
+          <outState>4</outState>
+          <condition>
+            <id>14</id>
+            <sop>
+              <count>1</count>
+              <item_version>0</item_version>
+              <item>
+                <count>0</count>
+                <item_version>0</item_version>
+              </item>
+            </sop>
+          </condition>
+        </item>
+        <item class_id_reference="29" object_id="_63">
+          <inState>4</inState>
+          <outState>5</outState>
+          <condition>
+            <id>15</id>
+            <sop>
+              <count>1</count>
+              <item_version>0</item_version>
+              <item>
+                <count>0</count>
+                <item_version>0</item_version>
+              </item>
+            </sop>
+          </condition>
+        </item>
       </transitions>
     </fsm>
-    <res class_id="29" tracking_level="1" version="0" object_id="_51">
-      <dp_component_resource class_id="30" tracking_level="0" version="0">
-        <count>0</count>
-        <item_version>0</item_version>
-      </dp_component_resource>
-      <dp_expression_resource>
+    <res class_id="35" tracking_level="1" version="0" object_id="_64">
+      <dp_component_resource class_id="36" tracking_level="0" version="0">
         <count>1</count>
         <item_version>0</item_version>
-        <item class_id="31" tracking_level="0" version="0">
-          <first>cnt_assign_fu_44_p2 ( + ) </first>
-          <second class_id="32" tracking_level="0" version="0">
-            <count>4</count>
+        <item class_id="37" tracking_level="0" version="0">
+          <first>acc_b_fadd_32ns_32ns_32_5_full_dsp_U0 (acc_b_fadd_32ns_32ns_32_5_full_dsp)</first>
+          <second class_id="38" tracking_level="0" version="0">
+            <count>3</count>
             <item_version>0</item_version>
-            <item class_id="33" tracking_level="0" version="0">
-              <first>(0P0)</first>
-              <second>32</second>
-            </item>
-            <item>
-              <first>(1P1)</first>
-              <second>32</second>
+            <item class_id="39" tracking_level="0" version="0">
+              <first>DSP48E</first>
+              <second>2</second>
             </item>
             <item>
               <first>FF</first>
-              <second>0</second>
+              <second>205</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>32</second>
+              <second>203</second>
             </item>
           </second>
         </item>
+      </dp_component_resource>
+      <dp_expression_resource>
+        <count>0</count>
+        <item_version>0</item_version>
       </dp_expression_resource>
       <dp_fifo_resource>
         <count>0</count>
@@ -781,8 +914,31 @@
         <item_version>0</item_version>
       </dp_memory_resource>
       <dp_multiplexer_resource>
-        <count>1</count>
+        <count>3</count>
         <item_version>0</item_version>
+        <item>
+          <first>ap_NS_fsm</first>
+          <second>
+            <count>4</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>6</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>6</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>1</second>
+            </item>
+          </second>
+        </item>
         <item>
           <first>cnt_loc_phi_fu_33_p4</first>
           <second>
@@ -790,7 +946,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0Size)</first>
-              <second>3</second>
+              <second>2</second>
             </item>
             <item>
               <first>(1Bits)</first>
@@ -798,7 +954,30 @@
             </item>
             <item>
               <first>(2Count)</first>
-              <second>96</second>
+              <second>64</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>32</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>cnt_loc_reg_30</first>
+          <second>
+            <count>4</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>2</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>32</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>64</second>
             </item>
             <item>
               <first>LUT</first>
@@ -808,7 +987,7 @@
         </item>
       </dp_multiplexer_resource>
       <dp_register_resource>
-        <count>2</count>
+        <count>3</count>
         <item_version>0</item_version>
         <item>
           <first>ap_CS_fsm</first>
@@ -817,7 +996,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>1</second>
+              <second>5</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -825,7 +1004,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>1</second>
+              <second>5</second>
             </item>
           </second>
         </item>
@@ -848,22 +1027,41 @@
             </item>
           </second>
         </item>
+        <item>
+          <first>cnt_loc_reg_30</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>32</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>32</second>
+            </item>
+          </second>
+        </item>
       </dp_register_resource>
-      <dp_component_map class_id="34" tracking_level="0" version="0">
-        <count>0</count>
-        <item_version>0</item_version>
-      </dp_component_map>
-      <dp_expression_map>
+      <dp_component_map class_id="40" tracking_level="0" version="0">
         <count>1</count>
         <item_version>0</item_version>
-        <item class_id="35" tracking_level="0" version="0">
-          <first>cnt_assign_fu_44_p2 ( + ) </first>
+        <item class_id="41" tracking_level="0" version="0">
+          <first>acc_b_fadd_32ns_32ns_32_5_full_dsp_U0 (acc_b_fadd_32ns_32ns_32_5_full_dsp)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
             <item>13</item>
           </second>
         </item>
+      </dp_component_map>
+      <dp_expression_map>
+        <count>0</count>
+        <item_version>0</item_version>
       </dp_expression_map>
       <dp_fifo_map>
         <count>0</count>
@@ -874,12 +1072,12 @@
         <item_version>0</item_version>
       </dp_memory_map>
     </res>
-    <node_label_latency class_id="36" tracking_level="0" version="0">
+    <node_label_latency class_id="42" tracking_level="0" version="0">
       <count>9</count>
       <item_version>0</item_version>
-      <item class_id="37" tracking_level="0" version="0">
+      <item class_id="43" tracking_level="0" version="0">
         <first>8</first>
-        <second class_id="38" tracking_level="0" version="0">
+        <second class_id="44" tracking_level="0" version="0">
           <first>0</first>
           <second>0</second>
         </second>
@@ -909,44 +1107,44 @@
         <first>13</first>
         <second>
           <first>0</first>
-          <second>0</second>
+          <second>4</second>
         </second>
       </item>
       <item>
         <first>14</first>
         <second>
-          <first>0</first>
+          <first>4</first>
           <second>0</second>
         </second>
       </item>
       <item>
         <first>15</first>
         <second>
-          <first>0</first>
+          <first>4</first>
           <second>0</second>
         </second>
       </item>
       <item>
         <first>17</first>
         <second>
-          <first>0</first>
+          <first>4</first>
           <second>0</second>
         </second>
       </item>
       <item>
         <first>18</first>
         <second>
-          <first>0</first>
+          <first>4</first>
           <second>0</second>
         </second>
       </item>
     </node_label_latency>
-    <bblk_ent_exit class_id="39" tracking_level="0" version="0">
+    <bblk_ent_exit class_id="45" tracking_level="0" version="0">
       <count>3</count>
       <item_version>0</item_version>
-      <item class_id="40" tracking_level="0" version="0">
+      <item class_id="46" tracking_level="0" version="0">
         <first>12</first>
-        <second class_id="41" tracking_level="0" version="0">
+        <second class_id="47" tracking_level="0" version="0">
           <first>0</first>
           <second>0</second>
         </second>
@@ -955,25 +1153,25 @@
         <first>16</first>
         <second>
           <first>0</first>
-          <second>0</second>
+          <second>4</second>
         </second>
       </item>
       <item>
         <first>19</first>
         <second>
-          <first>0</first>
-          <second>0</second>
+          <first>4</first>
+          <second>4</second>
         </second>
       </item>
     </bblk_ent_exit>
-    <regions class_id="42" tracking_level="0" version="0">
+    <regions class_id="48" tracking_level="0" version="0">
       <count>0</count>
       <item_version>0</item_version>
     </regions>
-    <dp_fu_nodes class_id="43" tracking_level="0" version="0">
+    <dp_fu_nodes class_id="49" tracking_level="0" version="0">
       <count>6</count>
       <item_version>0</item_version>
-      <item class_id="44" tracking_level="0" version="0">
+      <item class_id="50" tracking_level="0" version="0">
         <first>18</first>
         <second>
           <count>1</count>
@@ -1000,21 +1198,25 @@
       <item>
         <first>39</first>
         <second>
+          <count>5</count>
+          <item_version>0</item_version>
+          <item>13</item>
+          <item>13</item>
+          <item>13</item>
+          <item>13</item>
+          <item>13</item>
+        </second>
+      </item>
+      <item>
+        <first>45</first>
+        <second>
           <count>1</count>
           <item_version>0</item_version>
           <item>10</item>
         </second>
       </item>
       <item>
-        <first>44</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>13</item>
-        </second>
-      </item>
-      <item>
-        <first>51</first>
+        <first>50</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1022,18 +1224,10 @@
         </second>
       </item>
     </dp_fu_nodes>
-    <dp_fu_nodes_expression class_id="46" tracking_level="0" version="0">
-      <count>2</count>
+    <dp_fu_nodes_expression class_id="52" tracking_level="0" version="0">
+      <count>1</count>
       <item_version>0</item_version>
-      <item class_id="47" tracking_level="0" version="0">
-        <first>cnt_assign_fu_44</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>13</item>
-        </second>
-      </item>
-      <item>
+      <item class_id="53" tracking_level="0" version="0">
         <first>cnt_loc_phi_fu_33</first>
         <second>
           <count>1</count>
@@ -1043,8 +1237,20 @@
       </item>
     </dp_fu_nodes_expression>
     <dp_fu_nodes_module>
-      <count>0</count>
+      <count>1</count>
       <item_version>0</item_version>
+      <item>
+        <first>grp_fu_39</first>
+        <second>
+          <count>5</count>
+          <item_version>0</item_version>
+          <item>13</item>
+          <item>13</item>
+          <item>13</item>
+          <item>13</item>
+          <item>13</item>
+        </second>
+      </item>
     </dp_fu_nodes_module>
     <dp_fu_nodes_io>
       <count>4</count>
@@ -1066,7 +1272,7 @@
         </second>
       </item>
       <item>
-        <first>cnt_load_load_fu_39</first>
+        <first>cnt_load_load_fu_45</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1074,7 +1280,7 @@
         </second>
       </item>
       <item>
-        <first>stg_11_store_fu_51</first>
+        <first>stg_19_store_fu_50</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1094,12 +1300,12 @@
         </second>
       </item>
     </return_ports>
-    <dp_mem_port_nodes class_id="48" tracking_level="0" version="0">
+    <dp_mem_port_nodes class_id="54" tracking_level="0" version="0">
       <count>0</count>
       <item_version>0</item_version>
     </dp_mem_port_nodes>
     <dp_reg_nodes>
-      <count>1</count>
+      <count>4</count>
       <item_version>0</item_version>
       <item>
         <first>30</first>
@@ -1109,10 +1315,58 @@
           <item>17</item>
         </second>
       </item>
+      <item>
+        <first>56</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>8</item>
+        </second>
+      </item>
+      <item>
+        <first>60</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>9</item>
+        </second>
+      </item>
+      <item>
+        <first>65</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>10</item>
+        </second>
+      </item>
     </dp_reg_nodes>
     <dp_regname_nodes>
-      <count>1</count>
+      <count>4</count>
       <item_version>0</item_version>
+      <item>
+        <first>b_en_read_reg_56</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>8</item>
+        </second>
+      </item>
+      <item>
+        <first>b_in_read_reg_60</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>9</item>
+        </second>
+      </item>
+      <item>
+        <first>cnt_load_reg_65</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>10</item>
+        </second>
+      </item>
       <item>
         <first>cnt_loc_reg_30</first>
         <second>
@@ -1146,10 +1400,10 @@
         </second>
       </item>
     </dp_regname_phi>
-    <dp_port_io_nodes class_id="49" tracking_level="0" version="0">
+    <dp_port_io_nodes class_id="55" tracking_level="0" version="0">
       <count>2</count>
       <item_version>0</item_version>
-      <item class_id="50" tracking_level="0" version="0">
+      <item class_id="56" tracking_level="0" version="0">
         <first>b_en</first>
         <second>
           <count>1</count>
@@ -1180,7 +1434,7 @@
         </second>
       </item>
     </dp_port_io_nodes>
-    <port2core class_id="51" tracking_level="0" version="0">
+    <port2core class_id="57" tracking_level="0" version="0">
       <count>0</count>
       <item_version>0</item_version>
     </port2core>

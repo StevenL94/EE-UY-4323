@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'acc_b'
 ================================================================
-* Date:           Mon Mar 07 23:12:34 2016
+* Date:           Tue Mar 08 10:59:51 2016
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        acc_b.prj
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|      3.41|        1.25|
+    |ap_clk  |  10.00|      7.83|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -29,7 +29,7 @@
     |  Latency  |  Interval | Pipeline|
     | min | max | min | max |   Type  |
     +-----+-----+-----+-----+---------+
-    |    0|    0|    1|    1|   none  |
+    |    1|    4|    2|    5|   none  |
     +-----+-----+-----+-----+---------+
 
     + Detail: 
@@ -53,7 +53,7 @@ IsCombinational: 0
 IsDatapathOnly: 0
 HasWiredReturn: 1
 HasMFsm: 0
-HasVarLatency: 0
+HasVarLatency: 1
 IsPipeline: 0
 IsRtlPipelined: 0
 IsInstanceOverlapped: 0
@@ -65,53 +65,82 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 1
+* Number of FSM states: 5
 * Pipeline: 0
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
 1 --> 
+	2  / (!b_en_read)
+	5  / (b_en_read)
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
 * FSM state operations: 
 
- <State 1>: 3.41ns
-ST_1: stg_2 [1/1] 0.00ns
-:0  call void (...)* @_ssdm_op_SpecBitsMap(i32 %b_in) nounwind, !map !0
+ <State 1>: 6.51ns
+ST_1: stg_6 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap(float %b_in) nounwind, !map !0
 
-ST_1: stg_3 [1/1] 0.00ns
+ST_1: stg_7 [1/1] 0.00ns
 :1  call void (...)* @_ssdm_op_SpecBitsMap(i1 %b_en) nounwind, !map !6
 
-ST_1: stg_4 [1/1] 0.00ns
-:2  call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !10
+ST_1: stg_8 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(float 0.000000e+00) nounwind, !map !10
 
-ST_1: stg_5 [1/1] 0.00ns
+ST_1: stg_9 [1/1] 0.00ns
 :3  call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @acc_b_str) nounwind
 
 ST_1: b_en_read [1/1] 0.00ns
 :4  %b_en_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %b_en) nounwind
 
 ST_1: b_in_read [1/1] 0.00ns
-:5  %b_in_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %b_in) nounwind
+:5  %b_in_read = call float @_ssdm_op_Read.ap_auto.float(float %b_in) nounwind
 
 ST_1: cnt_load [1/1] 0.00ns
-:6  %cnt_load = load i32* @cnt, align 4
+:6  %cnt_load = load float* @cnt, align 4
 
-ST_1: stg_9 [1/1] 1.31ns
+ST_1: stg_13 [1/1] 1.31ns
 :7  br i1 %b_en_read, label %._crit_edge, label %1
 
-ST_1: cnt_assign [1/1] 2.10ns
-:0  %cnt_assign = add nsw i32 %cnt_load, %b_in_read
+ST_1: cnt_assign [5/5] 6.51ns
+:0  %cnt_assign = fadd float %cnt_load, %b_in_read
 
-ST_1: stg_11 [1/1] 0.00ns
-:1  store i32 %cnt_assign, i32* @cnt, align 4
 
-ST_1: stg_12 [1/1] 1.31ns
+ <State 2>: 6.51ns
+ST_2: cnt_assign [4/5] 6.51ns
+:0  %cnt_assign = fadd float %cnt_load, %b_in_read
+
+
+ <State 3>: 6.51ns
+ST_3: cnt_assign [3/5] 6.51ns
+:0  %cnt_assign = fadd float %cnt_load, %b_in_read
+
+
+ <State 4>: 6.51ns
+ST_4: cnt_assign [2/5] 6.51ns
+:0  %cnt_assign = fadd float %cnt_load, %b_in_read
+
+
+ <State 5>: 7.83ns
+ST_5: cnt_assign [1/5] 6.51ns
+:0  %cnt_assign = fadd float %cnt_load, %b_in_read
+
+ST_5: stg_19 [1/1] 0.00ns
+:1  store float %cnt_assign, float* @cnt, align 4
+
+ST_5: stg_20 [1/1] 1.31ns
 :2  br label %._crit_edge
 
-ST_1: cnt_loc [1/1] 0.00ns
-._crit_edge:0  %cnt_loc = phi i32 [ %cnt_load, %0 ], [ %cnt_assign, %1 ]
+ST_5: cnt_loc [1/1] 0.00ns
+._crit_edge:0  %cnt_loc = phi float [ %cnt_load, %0 ], [ %cnt_assign, %1 ]
 
-ST_1: stg_14 [1/1] 0.00ns
-._crit_edge:1  ret i32 %cnt_loc
+ST_5: stg_22 [1/1] 0.00ns
+._crit_edge:1  ret float %cnt_loc
 
 
 
@@ -121,34 +150,34 @@ ST_1: stg_14 [1/1] 0.00ns
 STG Binding: 
 ---------------- STG Properties BEGIN ----------------
 - Is combinational: 0
-- Is one-state seq: 1
+- Is one-state seq: 0
 - Is datapath-only: 0
 - Is clock enabled: 0
 - Is pipelined: 0
 - Is top level: 1
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ b_in]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x5b85210; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ b_en]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x5b84eb0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ cnt]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; mode=0x5b85060; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ b_in]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x5ad6ff0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ b_en]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x5ad7110; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ cnt]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; mode=0x5ad7350; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
 
 <LifeTime>
 <method=bitvector/>
-stg_2      (specbitsmap  ) [ 00]
-stg_3      (specbitsmap  ) [ 00]
-stg_4      (specbitsmap  ) [ 00]
-stg_5      (spectopmodule) [ 00]
-b_en_read  (read         ) [ 01]
-b_in_read  (read         ) [ 00]
-cnt_load   (load         ) [ 00]
-stg_9      (br           ) [ 00]
-cnt_assign (add          ) [ 00]
-stg_11     (store        ) [ 00]
-stg_12     (br           ) [ 00]
-cnt_loc    (phi          ) [ 00]
-stg_14     (ret          ) [ 00]
+stg_6      (specbitsmap  ) [ 000000]
+stg_7      (specbitsmap  ) [ 000000]
+stg_8      (specbitsmap  ) [ 000000]
+stg_9      (spectopmodule) [ 000000]
+b_en_read  (read         ) [ 011111]
+b_in_read  (read         ) [ 001111]
+cnt_load   (load         ) [ 011111]
+stg_13     (br           ) [ 011111]
+cnt_assign (fadd         ) [ 000000]
+stg_19     (store        ) [ 000000]
+stg_20     (br           ) [ 000000]
+cnt_loc    (phi          ) [ 000001]
+stg_22     (ret          ) [ 000000]
 </LifeTime>
 
 <model>
@@ -231,7 +260,7 @@ stg_14     (ret          ) [ 00]
 <pin id="17" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.float"/></StgValue>
 </bind>
 </comp>
 
@@ -239,7 +268,7 @@ stg_14     (ret          ) [ 00]
 <pin_list>
 <pin id="19" dir="0" index="0" bw="1" slack="0"/>
 <pin id="20" dir="0" index="1" bw="1" slack="0"/>
-<pin id="21" dir="1" index="2" bw="1" slack="2147483647"/>
+<pin id="21" dir="1" index="2" bw="1" slack="4"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -271,7 +300,7 @@ stg_14     (ret          ) [ 00]
 
 <comp id="33" class="1004" name="cnt_loc_phi_fu_33">
 <pin_list>
-<pin id="34" dir="0" index="0" bw="32" slack="0"/>
+<pin id="34" dir="0" index="0" bw="32" slack="4"/>
 <pin id="35" dir="0" index="1" bw="0" slack="2147483647"/>
 <pin id="36" dir="0" index="2" bw="32" slack="0"/>
 <pin id="37" dir="0" index="3" bw="0" slack="2147483647"/>
@@ -279,14 +308,26 @@ stg_14     (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
-<opset="cnt_loc/1 "/>
+<opset="cnt_loc/5 "/>
 </bind>
 </comp>
 
-<comp id="39" class="1004" name="cnt_load_load_fu_39">
+<comp id="39" class="1004" name="grp_fu_39">
 <pin_list>
 <pin id="40" dir="0" index="0" bw="32" slack="0"/>
-<pin id="41" dir="1" index="1" bw="32" slack="0"/>
+<pin id="41" dir="0" index="1" bw="32" slack="0"/>
+<pin id="42" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="fadd(9) " fcode="fadd"/>
+<opset="cnt_assign/1 "/>
+</bind>
+</comp>
+
+<comp id="45" class="1004" name="cnt_load_load_fu_45">
+<pin_list>
+<pin id="46" dir="0" index="0" bw="32" slack="0"/>
+<pin id="47" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -294,27 +335,45 @@ stg_14     (ret          ) [ 00]
 </bind>
 </comp>
 
-<comp id="44" class="1004" name="cnt_assign_fu_44">
+<comp id="50" class="1004" name="stg_19_store_fu_50">
 <pin_list>
-<pin id="45" dir="0" index="0" bw="32" slack="0"/>
-<pin id="46" dir="0" index="1" bw="32" slack="0"/>
-<pin id="47" dir="1" index="2" bw="32" slack="0"/>
-</pin_list>
-<bind>
-<opcode="add(8) " fcode="add"/>
-<opset="cnt_assign/1 "/>
-</bind>
-</comp>
-
-<comp id="51" class="1004" name="stg_11_store_fu_51">
-<pin_list>
-<pin id="52" dir="0" index="0" bw="32" slack="0"/>
-<pin id="53" dir="0" index="1" bw="32" slack="0"/>
-<pin id="54" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="51" dir="0" index="0" bw="32" slack="0"/>
+<pin id="52" dir="0" index="1" bw="32" slack="0"/>
+<pin id="53" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="stg_11/1 "/>
+<opset="stg_19/5 "/>
+</bind>
+</comp>
+
+<comp id="56" class="1005" name="b_en_read_reg_56">
+<pin_list>
+<pin id="57" dir="0" index="0" bw="1" slack="4"/>
+<pin id="58" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="b_en_read "/>
+</bind>
+</comp>
+
+<comp id="60" class="1005" name="b_in_read_reg_60">
+<pin_list>
+<pin id="61" dir="0" index="0" bw="32" slack="1"/>
+<pin id="62" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="b_in_read "/>
+</bind>
+</comp>
+
+<comp id="65" class="1005" name="cnt_load_reg_65">
+<pin_list>
+<pin id="66" dir="0" index="0" bw="32" slack="1"/>
+<pin id="67" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="cnt_load "/>
 </bind>
 </comp>
 
@@ -329,19 +388,29 @@ stg_14     (ret          ) [ 00]
 
 <net id="29"><net_src comp="0" pin="0"/><net_sink comp="24" pin=1"/></net>
 
-<net id="42"><net_src comp="4" pin="0"/><net_sink comp="39" pin=0"/></net>
+<net id="43"><net_src comp="39" pin="2"/><net_sink comp="33" pin=2"/></net>
 
-<net id="43"><net_src comp="39" pin="1"/><net_sink comp="33" pin=0"/></net>
+<net id="44"><net_src comp="24" pin="2"/><net_sink comp="39" pin=1"/></net>
 
-<net id="48"><net_src comp="39" pin="1"/><net_sink comp="44" pin=0"/></net>
+<net id="48"><net_src comp="4" pin="0"/><net_sink comp="45" pin=0"/></net>
 
-<net id="49"><net_src comp="24" pin="2"/><net_sink comp="44" pin=1"/></net>
+<net id="49"><net_src comp="45" pin="1"/><net_sink comp="39" pin=0"/></net>
 
-<net id="50"><net_src comp="44" pin="2"/><net_sink comp="33" pin=2"/></net>
+<net id="54"><net_src comp="39" pin="2"/><net_sink comp="50" pin=0"/></net>
 
-<net id="55"><net_src comp="44" pin="2"/><net_sink comp="51" pin=0"/></net>
+<net id="55"><net_src comp="4" pin="0"/><net_sink comp="50" pin=1"/></net>
 
-<net id="56"><net_src comp="4" pin="0"/><net_sink comp="51" pin=1"/></net>
+<net id="59"><net_src comp="18" pin="2"/><net_sink comp="56" pin=0"/></net>
+
+<net id="63"><net_src comp="24" pin="2"/><net_sink comp="60" pin=0"/></net>
+
+<net id="64"><net_src comp="60" pin="1"/><net_sink comp="39" pin=1"/></net>
+
+<net id="68"><net_src comp="45" pin="1"/><net_sink comp="65" pin=0"/></net>
+
+<net id="69"><net_src comp="65" pin="1"/><net_sink comp="39" pin=0"/></net>
+
+<net id="70"><net_src comp="65" pin="1"/><net_sink comp="33" pin=0"/></net>
 
 </net_list>
 
@@ -353,9 +422,13 @@ stg_14     (ret          ) [ 00]
   - Chain level:
 	State 1
 		cnt_assign : 1
-		stg_11 : 2
-		cnt_loc : 2
-		stg_14 : 3
+	State 2
+	State 3
+	State 4
+	State 5
+		stg_19 : 1
+		cnt_loc : 1
+		stg_22 : 2
 
 
 ============================================================
@@ -363,46 +436,52 @@ stg_14     (ret          ) [ 00]
 ============================================================
 
 * Functional unit list:
-|----------|----------------------|---------|---------|
-| Operation|    Functional Unit   |    FF   |   LUT   |
-|----------|----------------------|---------|---------|
-|    add   |   cnt_assign_fu_44   |    0    |    32   |
-|----------|----------------------|---------|---------|
-|   read   | b_en_read_read_fu_18 |    0    |    0    |
-|          | b_in_read_read_fu_24 |    0    |    0    |
-|----------|----------------------|---------|---------|
-|   Total  |                      |    0    |    32   |
-|----------|----------------------|---------|---------|
+|----------|----------------------|---------|---------|---------|
+| Operation|    Functional Unit   |  DSP48E |    FF   |   LUT   |
+|----------|----------------------|---------|---------|---------|
+|   fadd   |       grp_fu_39      |    2    |   205   |   203   |
+|----------|----------------------|---------|---------|---------|
+|   read   | b_en_read_read_fu_18 |    0    |    0    |    0    |
+|          | b_in_read_read_fu_24 |    0    |    0    |    0    |
+|----------|----------------------|---------|---------|---------|
+|   Total  |                      |    2    |   205   |   203   |
+|----------|----------------------|---------|---------|---------|
 
 Memories:
 N/A
 
 * Register list:
-+--------------+--------+
-|              |   FF   |
-+--------------+--------+
-|cnt_loc_reg_30|   32   |
-+--------------+--------+
-|     Total    |   32   |
-+--------------+--------+
++----------------+--------+
+|                |   FF   |
++----------------+--------+
+|b_en_read_reg_56|    1   |
+|b_in_read_reg_60|   32   |
+| cnt_load_reg_65|   32   |
+| cnt_loc_reg_30 |   32   |
++----------------+--------+
+|      Total     |   97   |
++----------------+--------+
 
 * Multiplexer (MUX) list: 
-|--------|------|------|------|--------|
-|  Comp  |  Pin | Size |  BW  | S x BW |
-|--------|------|------|------|--------|
-|  Total |      |      |      |    0   |
-|--------|------|------|------|--------|
+|-----------|------|------|------|--------||---------||---------|
+|    Comp   |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|-----------|------|------|------|--------||---------||---------|
+| grp_fu_39 |  p0  |   2  |  32  |   64   ||    32   |
+| grp_fu_39 |  p1  |   2  |  32  |   64   ||    32   |
+|-----------|------|------|------|--------||---------||---------|
+|   Total   |      |      |      |   128  ||  2.622  ||    64   |
+|-----------|------|------|------|--------||---------||---------|
 
 
 
 * Summary:
-+-----------+--------+--------+
-|           |   FF   |   LUT  |
-+-----------+--------+--------+
-|  Function |    0   |   32   |
-|   Memory  |    -   |    -   |
-|Multiplexer|    -   |    -   |
-|  Register |   32   |    -   |
-+-----------+--------+--------+
-|   Total   |   32   |   32   |
-+-----------+--------+--------+
++-----------+--------+--------+--------+--------+
+|           | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+
+|  Function |    2   |    -   |   205  |   203  |
+|   Memory  |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    2   |    -   |   64   |
+|  Register |    -   |    -   |   97   |    -   |
++-----------+--------+--------+--------+--------+
+|   Total   |    2   |    2   |   302  |   267  |
++-----------+--------+--------+--------+--------+

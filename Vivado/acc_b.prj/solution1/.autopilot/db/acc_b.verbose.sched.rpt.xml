@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'acc_b'" level="0">
-<item name = "Date">Mon Mar 07 23:12:34 2016
+<item name = "Date">Tue Mar 08 10:59:51 2016
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">acc_b.prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 3.41, 1.25</column>
+<column name="ap_clk">10.00, 7.83, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">0, 0, 1, 1, none</column>
+<column name="">1, 4, 2, 5, none</column>
 </table>
 </item>
 <item name = "Detail">
