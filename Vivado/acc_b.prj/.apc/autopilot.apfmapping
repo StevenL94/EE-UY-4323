@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="acc_b.c" path="C:\Users\stevenlee\Documents\acc_b.prj\acc_b.c"/>
+  </source>
+  <testbench>
+    <originFiles name="acc_b_test.c" path="C:\Users\stevenlee\Documents\acc_b.prj\acc_b_test.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

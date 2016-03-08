@@ -1,0 +1,25 @@
+@I [SIM-47] Using XSIM for RTL simulation.
+@I [SIM-14] Instrumenting C test bench ...
+   Build using "C:/Xilinx/Vivado_HLS/2015.4/msys/bin/g++.exe"
+   Compiling apatb_acc_b.cpp
+   Compiling (apcc) acc_b.c_pre.c.tb.c
+@I [HLS-10] Running 'c:/Xilinx/Vivado_HLS/2015.4/bin/unwrapped/win64.o/apcc.exe'
+            for user 'stevenlee' on host 'stevenlee7db2' (Windows NT_amd64 version 6.1) on Mon Mar 07 23:12:48 -0500 2016
+            in directory 'C:/Users/stevenlee/Documents/acc_b.prj/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+@I [APCC-3] Tmp directory is apcc_db
+@I [APCC-1] APCC is done.
+   Compiling (apcc) acc_b_test.c_pre.c.tb.c
+@I [HLS-10] Running 'c:/Xilinx/Vivado_HLS/2015.4/bin/unwrapped/win64.o/apcc.exe'
+            for user 'stevenlee' on host 'stevenlee7db2' (Windows NT_amd64 version 6.1) on Mon Mar 07 23:12:51 -0500 2016
+            in directory 'C:/Users/stevenlee/Documents/acc_b.prj/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+@I [APCC-3] Tmp directory is apcc_db
+@I [APCC-1] APCC is done.
+   Generating cosim.tv.exe
+@I [SIM-302] Starting C TB testing ... 
+@E [SIM-359] Aborting co-simulation: C TB simulation failed, nonzero return value '1'.
+@E [SIM-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
+@E [SIM-4] *** C/RTL co-simulation finished: FAIL ***

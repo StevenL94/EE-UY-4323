@@ -1,0 +1,41 @@
+ISim log file
+Running: Z:\Documents\EE-UY 4323\EE-UY-4323\acc_b\acc_b_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b_isim_beh.wdb 
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# isim force add /acc_b/clk 0 -radix bin -value 1 -radix bin -time 500 ns -repeat 1 us
+# isim force add /acc_b/rst 1 -radix bin
+# run 1.00us
+# isim force add /acc_b/b_in 1 -radix unsigned
+# isim force add /acc_b/b_in 1 -radix dec
+# isim force add /acc_b/b_en 0 -radix bin
+# isim force add /acc_b/rst 0 -radix bin
+# run 1.00us
+# isim force add /acc_b/b_en 1 -radix bin
+# run 1.00us
+# isim force add /acc_b/b_in 2 -radix dec
+# run 1.00us
+# isim force add /acc_b/b_in 3 -radix unsigned
+# run 1.00us
+# isim force add /acc_b/b_in 4 -radix dec
+# run 1.00us
+# isim force add /acc_b/b_in 5 -radix dec
+# run 1.00us
+# isim force add /acc_b/b_in 6 -radix dec
+# run 1.00us
+# isim force add /acc_b/b_in 7 -radix dec
+# run 1.00us
+# isim force add /acc_b/b_in 8 -radix dec
+# run 1.00us
+# isim force add /acc_b/b_in 9 -radix dec
+# run 1.00us
+# isim force add /acc_b/b_in 10 -radix dec
+# run 1.00us

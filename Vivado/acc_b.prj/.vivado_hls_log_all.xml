@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog>
+        <logs message="@E [SIM-4] *** C/RTL co-simulation finished: FAIL ***&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source C:/Users/stevenlee/Documents/acc_b.prj/solution1/cosim.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Users/stevenlee/Documents/acc_b.prj/solution1/cosim.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="acc_b.prj" solutionName="solution1" date="2016-03-07T23:12:58.072-0500"/>
+        <logs message="@E [SIM-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim." projectName="acc_b.prj" solutionName="solution1" date="2016-03-07T23:12:57.511-0500"/>
+        <logs message="Error@E [SIM-359] Aborting co-simulation: C TB simulation failed, nonzero return value '1'." projectName="acc_b.prj" solutionName="solution1" date="2016-03-07T23:12:57.480-0500"/>
+      </simLog>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="@W [RTGEN-101] Register 'cnt' is power-on initialization." projectName="acc_b.prj" solutionName="solution1" date="2016-03-07T23:12:34.120-0500" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,0 +1,28 @@
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 "acc_b.ngc" acc_b.ngd  
+map -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o acc_b_map.ncd acc_b.ngd acc_b.pcf 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 "acc_b.ngc" acc_b.ngd  
+map -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o acc_b_map.ncd acc_b.ngd acc_b.pcf 
+par -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -w -intstyle ise -ol high -mt off acc_b_map.ncd acc_b.ncd acc_b.pcf 
+trce -filter {Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter} -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml acc_b.twx acc_b.ncd -o acc_b.twr acc_b.pcf 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 "acc_b.ngc" acc_b.ngd  
+map -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o acc_b_map.ncd acc_b.ngd acc_b.pcf 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+xst -intstyle ise -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -ifn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.xst" -ofn "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/acc_b.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 "acc_b.ngc" acc_b.ngd  
+map -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o acc_b_map.ncd acc_b.ngd acc_b.pcf 
+par -filter "Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter" -w -intstyle ise -ol high -mt off acc_b_map.ncd acc_b.ncd acc_b.pcf 
+trce -filter {Z:/Documents/EE-UY 4323/EE-UY-4323/acc_b/iseconfig/filter.filter} -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml acc_b.twx acc_b.ncd -o acc_b.twr acc_b.pcf 
