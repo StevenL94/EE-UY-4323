@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a200tfbg676-2" LaunchTime="1458621606">
+  <File Type="OPT-DCP" Name="acc_f_opt.dcp"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="ROUTE-DCP" Name="acc_f_routed.dcp"/>
+  <File Type="PA-TCL" Name="acc_f.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="OPT-DRC" Name="acc_f_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="acc_f_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="acc_f_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="acc_f.hwdef"/>
+  <File Type="PWROPT-DCP" Name="acc_f_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="acc_f_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="acc_f_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="acc_f_placed.dcp"/>
+  <File Type="PLACE-IO" Name="acc_f_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="acc_f_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="acc_f_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="acc_f_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="acc_f_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="acc_f_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="acc_f_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="acc_f_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="acc_f_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="acc_f_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="acc_f_physopt.dcp"/>
+  <File Type="RDI-RDI" Name="acc_f.vdi"/>
+  <File Type="PHYSOPT-DRC" Name="acc_f_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="acc_f_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-DRC" Name="acc_f_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="acc_f_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="acc_f_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="acc_f_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="acc_f_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="acc_f_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="acc_f_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="acc_f_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="acc_f_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="acc_f_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="acc_f_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="acc_f_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="acc_f_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="acc_f_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="acc_f_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="acc_f.bit"/>
+  <File Type="BG-BIN" Name="acc_f.bin"/>
+  <File Type="BITSTR-MSK" Name="acc_f.msk"/>
+  <File Type="BITSTR-RBT" Name="acc_f.rbt"/>
+  <File Type="BITSTR-NKY" Name="acc_f.nky"/>
+  <File Type="BITSTR-BMM" Name="acc_f_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="acc_f.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="acc_f.sysdef"/>
+  <File Type="BG-BGN" Name="acc_f.bgn"/>
+  <File Type="BG-DRC" Name="acc_f.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/acc_f.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="acc_f"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

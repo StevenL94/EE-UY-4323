@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Mar 22 00:40:11 2016
+# Process ID: 15192
+# Current directory: C:/Users/Steven Lee/OneDrive/Documents/EE-UY 4323/EE-UY-4323/acc_f/acc_f.runs/impl_1
+# Command line: vivado.exe -log acc_f.vdi -applog -messageDb vivado.pb -mode batch -source acc_f.tcl -notrace
+# Log file: C:/Users/Steven Lee/OneDrive/Documents/EE-UY 4323/EE-UY-4323/acc_f/acc_f.runs/impl_1/acc_f.vdi
+# Journal file: C:/Users/Steven Lee/OneDrive/Documents/EE-UY 4323/EE-UY-4323/acc_f/acc_f.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source acc_f.tcl -notrace
