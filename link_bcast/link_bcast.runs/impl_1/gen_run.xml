@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a200tfbg676-2" LaunchTime="1459833776">
+  <File Type="OPT-DCP" Name="link_bcast_opt.dcp"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="ROUTE-DCP" Name="link_bcast_routed.dcp"/>
+  <File Type="PA-TCL" Name="link_bcast.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="OPT-DRC" Name="link_bcast_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="link_bcast_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="link_bcast_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="link_bcast.hwdef"/>
+  <File Type="PWROPT-DCP" Name="link_bcast_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="link_bcast_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="link_bcast_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="link_bcast_placed.dcp"/>
+  <File Type="PLACE-IO" Name="link_bcast_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="link_bcast_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="link_bcast_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="link_bcast_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="link_bcast_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="link_bcast_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="link_bcast_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="link_bcast_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="link_bcast_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="link_bcast_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="link_bcast_physopt.dcp"/>
+  <File Type="RDI-RDI" Name="link_bcast.vdi"/>
+  <File Type="PHYSOPT-DRC" Name="link_bcast_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="link_bcast_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-DRC" Name="link_bcast_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="link_bcast_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="link_bcast_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="link_bcast_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="link_bcast_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="link_bcast_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="link_bcast_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="link_bcast_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="link_bcast_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="link_bcast_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="link_bcast_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="link_bcast_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="link_bcast_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="link_bcast_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="link_bcast_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="link_bcast.bit"/>
+  <File Type="BG-BIN" Name="link_bcast.bin"/>
+  <File Type="BITSTR-MSK" Name="link_bcast.msk"/>
+  <File Type="BITSTR-RBT" Name="link_bcast.rbt"/>
+  <File Type="BITSTR-NKY" Name="link_bcast.nky"/>
+  <File Type="BITSTR-BMM" Name="link_bcast_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="link_bcast.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="link_bcast.sysdef"/>
+  <File Type="BG-BGN" Name="link_bcast.bgn"/>
+  <File Type="BG-DRC" Name="link_bcast.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/link_bcast.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="link_bcast"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015">
+      <Desc>Vivado Implementation Defaults</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
