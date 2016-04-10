@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date         : Tue Apr 05 01:23:34 2016
-| Host         : StevenLee-PC running 64-bit major release  (build 9200)
+| Date         : Sun Apr 10 16:06:39 2016
+| Host         : STEVENLEE7DB2 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_control_sets -verbose -file link_bcast_control_sets_placed.rpt
 | Design       : link_bcast
 | Device       : xc7a200t
@@ -35,10 +35,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               0 |            0 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |               8 |            2 |
+| No           | Yes                   | No                     |               4 |            2 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| Yes          | Yes                   | No                     |               4 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -48,8 +48,8 @@ Table of Contents
 +----------------+---------------+--------------------+------------------+----------------+
 |  Clock Signal  | Enable Signal |  Set/Reset Signal  | Slice Load Count | Bel Load Count |
 +----------------+---------------+--------------------+------------------+----------------+
-|  clk_IBUF_BUFG |               | rst_IBUF           |                1 |              4 |
-|  clk_IBUF_BUFG |               | req_cnt[3]_i_1_n_0 |                1 |              4 |
+|  clk_IBUF_BUFG |               | rst_IBUF           |                2 |              4 |
+|  clk_IBUF_BUFG | en_IBUF       | req_cnt[3]_i_1_n_0 |                1 |              4 |
 +----------------+---------------+--------------------+------------------+----------------+
 
 

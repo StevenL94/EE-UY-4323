@@ -12,4 +12,5 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
 Compiling architecture behavioral of entity xil_defaultlib.link_bcast
+Waiting for 1 sub-compilation(s) to finish...
 Built simulation snapshot link_bcast_behav

@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date             : Tue Apr 05 01:25:09 2016
-| Host             : StevenLee-PC running 64-bit major release  (build 9200)
+| Date             : Sun Apr 10 16:07:52 2016
+| Host             : STEVENLEE7DB2 running 64-bit Service Pack 1  (build 7601)
 | Command          : 
 | Design           : link_bcast
 | Device           : xc7a200tfbg676-2
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 4.044 |
-| Dynamic (W)              | 3.901 |
-| Device Static (W)        | 0.143 |
+| Total On-Chip Power (W)  | 0.892 |
+| Dynamic (W)              | 0.759 |
+| Device Static (W)        | 0.133 |
 | Effective TJA (C/W)      | 1.9   |
-| Max Ambient (C)          | 77.4  |
-| Junction Temperature (C) | 32.6  |
+| Max Ambient (C)          | 83.3  |
+| Junction Temperature (C) | 26.7  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,15 +49,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.095 |       19 |       --- |             --- |
-|   LUT as Logic |     0.085 |        7 |    133800 |           <0.01 |
+| Slice Logic    |     0.094 |       23 |       --- |             --- |
+|   LUT as Logic |     0.083 |       11 |    133800 |           <0.01 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Register     |     0.004 |        8 |    267600 |           <0.01 |
+|   Register     |     0.005 |        8 |    267600 |           <0.01 |
 |   Others       |     0.000 |        1 |       --- |             --- |
-| Signals        |     0.110 |       16 |       --- |             --- |
-| I/O            |     3.696 |       14 |       400 |            3.50 |
-| Static Power   |     0.143 |          |           |                 |
-| Total          |     4.044 |          |           |                 |
+| Signals        |     0.082 |       21 |       --- |             --- |
+| I/O            |     0.583 |       11 |       400 |            2.75 |
+| Static Power   |     0.133 |          |           |                 |
+| Total          |     0.892 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -67,11 +67,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.266 |       0.225 |      0.040 |
-| Vccaux    |       1.800 |     0.332 |       0.301 |      0.032 |
+| Vccint    |       1.000 |     0.228 |       0.196 |      0.032 |
+| Vccaux    |       1.800 |     0.077 |       0.046 |      0.031 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     1.746 |       1.741 |      0.005 |
+| Vcco18    |       1.800 |     0.272 |       0.267 |      0.005 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -134,7 +134,7 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| link_bcast |     3.901 |
+| link_bcast |     0.759 |
 +------------+-----------+
 
 

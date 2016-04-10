@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date              : Tue Apr 05 01:25:10 2016
-| Host              : StevenLee-PC running 64-bit major release  (build 9200)
+| Date              : Sun Apr 10 16:07:52 2016
+| Host              : STEVENLEE7DB2 running 64-bit Service Pack 1  (build 7601)
 | Command           : report_clock_utilization -file link_bcast_clock_utilization_routed.rpt
 | Design            : link_bcast
 | Device            : 7a200t-fbg676
@@ -47,7 +47,7 @@ Table of Contents
 +-------+--------------------+---------------+------+-------+-------+
 | Index | BUFG Cell          | Net Name      | BELs | Sites | Fixed |
 +-------+--------------------+---------------+------+-------+-------+
-|     1 | clk_IBUF_BUFG_inst | clk_IBUF_BUFG |    8 |     2 |    no |
+|     1 | clk_IBUF_BUFG_inst | clk_IBUF_BUFG |    8 |     3 |    no |
 +-------+--------------------+---------------+------+-------+-------+
 
 

@@ -51,11 +51,11 @@ set rc [catch {
   create_project -in_memory -part xc7a200tfbg676-2
   set_property board_part xilinx.com:ac701:part0:1.2 [current_project]
   set_property design_mode GateLvl [current_fileset]
-  set_property webtalk.parent_dir {C:/Users/Steven Lee/OneDrive/Documents/EE-UY 4323/EE-UY-4323/link_bcast/link_bcast.cache/wt} [current_project]
-  set_property parent.project_path {C:/Users/Steven Lee/OneDrive/Documents/EE-UY 4323/EE-UY-4323/link_bcast/link_bcast.xpr} [current_project]
-  set_property ip_repo_paths {{c:/Users/Steven Lee/OneDrive/Documents/EE-UY 4323/EE-UY-4323/link_bcast/link_bcast.cache/ip}} [current_project]
-  set_property ip_output_repo {{c:/Users/Steven Lee/OneDrive/Documents/EE-UY 4323/EE-UY-4323/link_bcast/link_bcast.cache/ip}} [current_project]
-  add_files -quiet {{C:/Users/Steven Lee/OneDrive/Documents/EE-UY 4323/EE-UY-4323/link_bcast/link_bcast.runs/synth_1/link_bcast.dcp}}
+  set_property webtalk.parent_dir C:/Users/stevenlee/Documents/link_bcast/link_bcast.cache/wt [current_project]
+  set_property parent.project_path C:/Users/stevenlee/Documents/link_bcast/link_bcast.xpr [current_project]
+  set_property ip_repo_paths c:/Users/stevenlee/Documents/link_bcast/link_bcast.cache/ip [current_project]
+  set_property ip_output_repo c:/Users/stevenlee/Documents/link_bcast/link_bcast.cache/ip [current_project]
+  add_files -quiet C:/Users/stevenlee/Documents/link_bcast/link_bcast.runs/synth_1/link_bcast.dcp
   link_design -top link_bcast -part xc7a200tfbg676-2
   close_msg_db -file init_design.pb
 } RESULT]
