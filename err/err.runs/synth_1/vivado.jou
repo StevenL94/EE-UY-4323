@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Apr 26 12:09:15 2016
+# Process ID: 2944
+# Current directory: C:/Users/stevenlee/Documents/err/err.runs/synth_1
+# Command line: vivado.exe -log err.vds -mode batch -messageDb vivado.pb -notrace -source err.tcl
+# Log file: C:/Users/stevenlee/Documents/err/err.runs/synth_1/err.vds
+# Journal file: C:/Users/stevenlee/Documents/err/err.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source err.tcl -notrace

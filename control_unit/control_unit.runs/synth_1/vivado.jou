@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Mon Apr 25 21:46:30 2016
+# Process ID: 4656
+# Current directory: C:/Users/stevenlee/Documents/control_unit/control_unit.runs/synth_1
+# Command line: vivado.exe -log control_unit.vds -mode batch -messageDb vivado.pb -notrace -source control_unit.tcl
+# Log file: C:/Users/stevenlee/Documents/control_unit/control_unit.runs/synth_1/control_unit.vds
+# Journal file: C:/Users/stevenlee/Documents/control_unit/control_unit.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source control_unit.tcl -notrace

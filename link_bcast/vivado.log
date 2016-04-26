@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Apr 26 12:15:31 2016
+# Process ID: 4012
+# Current directory: C:/Users/stevenlee/Documents/link_bcast
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4676 C:\Users\stevenlee\Documents\link_bcast\link_bcast.xpr
+# Log file: C:/Users/stevenlee/Documents/link_bcast/vivado.log
+# Journal file: C:/Users/stevenlee/Documents/link_bcast\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/stevenlee/Documents/link_bcast/link_bcast.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IPStaticSourceDir: Could not find the directory 'C:/Users/stevenlee/Documents/link_bcast/link_bcast.ip_user_files/ipstatic'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.4/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 717.590 ; gain = 151.242
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-1061] Parsing VHDL file "C:/Users/stevenlee/Documents/link_bcast/link_bcast.srcs/sources_1/new/link_bcast.vhd" into library xil_defaultlib [C:/Users/stevenlee/Documents/link_bcast/link_bcast.srcs/sources_1/new/link_bcast.vhd:1]
+[Tue Apr 26 12:16:23 2016] Launched synth_1...
+Run output will be captured here: C:/Users/stevenlee/Documents/link_bcast/link_bcast.runs/synth_1/runme.log
+launch_runs impl_1
+[Tue Apr 26 12:16:56 2016] Launched impl_1...
+Run output will be captured here: C:/Users/stevenlee/Documents/link_bcast/link_bcast.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 26 12:18:58 2016...

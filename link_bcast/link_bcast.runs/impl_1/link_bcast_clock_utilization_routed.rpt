@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date              : Sun Apr 10 16:07:52 2016
+| Date              : Tue Apr 26 12:18:45 2016
 | Host              : STEVENLEE7DB2 running 64-bit Service Pack 1  (build 7601)
 | Command           : report_clock_utilization -file link_bcast_clock_utilization_routed.rpt
 | Design            : link_bcast
